@@ -76,6 +76,9 @@ if(isset($_POST['submit'])){
             $errores .="<li>Árchivo no permitido!</li>";
             }else{
                
+                  if(!file_exists("Modelos")){
+                    mkdir("Modelos");
+               }
                 $rutaFoto ="Modelos/".$_SESSION['user'][0][4]."/";
                 $archivoFoto=$rutaFoto.$_FILES['Foto']['name'];
                 $rutaModelo = "Modelos/".$_SESSION['user'][0][4]."/";
