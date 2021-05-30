@@ -58,7 +58,9 @@ if(isset($_POST['submit'])){
             if($_FILES['archivo']['error']>0){
                 $errores .= "<li>error al cargar la imagen de perfil</li>";
             }else{
-
+ if(!file_exists("Img_Perfil")){
+                    mkdir("Img_Perfil");
+                }
                 if(!empty($_SESSION['user'][0][3]))
                 eliminarDir('Img_Perfil/'.$_SESSION['user'][0][4]); 
 
